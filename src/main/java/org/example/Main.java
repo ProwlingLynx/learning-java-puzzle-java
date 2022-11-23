@@ -55,6 +55,12 @@ public class Main {
         }
         System.out.println("No vowels tonight folks!");
     }
+    public static int generateRandomInt() {
+        return generateRandomInt(1, 0);
+    }
+    public static int generateRandomInt(int limit) {
+        return generateRandomInt(limit, 0);
+    }
 
     public static int generateRandomInt(int limitUpper, int limitLower) {
         double random = Math.random();
