@@ -24,6 +24,11 @@ public class Main {
             System.out.println(val);
         }
     }
+    public static void printAllElements(String[] list) {
+        for (String val: list) {
+            System.out.println(val);
+        }
+    }
 
     public static void shuffleList(ArrayList<String> list) {
         Collections.shuffle(list);
@@ -75,6 +80,26 @@ public class Main {
         return arr;
     }
 
+    public static String generateRandomCharacterString() {
+        return Character.toString(generateRandomInt(122, 97));
+    }
+
+    public static String generateRandomString(int size) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = size; i > 0; i--) {
+            sb.append(generateRandomCharacterString());
+        }
+        return sb.toString();
+    }
+
+    public static String[] generateArrayOfRandomStrings(int size) {
+        String[] output = new String[size];
+        for (int i = 0; i < size; i++) {
+            output[i] = generateRandomString(5);
+        }
+        return output;
+    }
+
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
@@ -117,5 +142,13 @@ public class Main {
         printAllElements(randomArray);
 
         createLineBreak();
+        System.out.println("Time to make random strings~\n");
+        System.out.println(generateRandomString(5));
+        System.out.println("\nHeh, never know what you're going to get :)");
+        createLineBreak();
+
+        System.out.println("We can do better by turning it into an array!");
+        printAllElements(generateArrayOfRandomStrings(10));
+
     }
 }
