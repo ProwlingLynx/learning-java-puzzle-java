@@ -11,7 +11,8 @@ For this assignment, we are going to introduce two new classes: Collections and 
 ## Tasks:
 Work on the puzzles below. Make your code as clean as possible. The class name should be PuzzleJava; you will need to create methods for each of the tasks below and test them in the main method.
 
-- Create an array with the following values: 3,5,1,2,7,9,8,13,25,32. Print the sum of all numbers in the array. Also have the function return an array that only includes numbers that are greater than 10 (e.g. when you pass the array above, it should return an array with the values of 13,25,32)
+- Create an array with the following values: 3,5,1,2,7,9,8,13,25,32. Print the sum of all numbers in the array. 
+- Also have the function return an array that only includes numbers that are greater than 10 (e.g. when you pass the array above, it should return an array with the values of 13,25,32)
 - Create an array with the following values: Nancy, Jinichi, Fujibayashi, Momochi, Ishikawa. Shuffle the array and print the name of each person. Have the method also return an array with names that are longer than 5 characters.
 - Create an array that contains all 26 letters of the alphabet (this array must have 26 values). Shuffle the array and, after shuffling, display the last letter from the array. Have it also display the first letter of the array. If the first letter in the array is a vowel, have it display a message.
 To shuffle a collection, you can use the shuffle method of the Collections class. Collections Class documentation
