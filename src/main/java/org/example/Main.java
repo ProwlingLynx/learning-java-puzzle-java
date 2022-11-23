@@ -57,7 +57,23 @@ public class Main {
         System.out.println("No vowels tonight folks!");
     }
 
+    public static int generateRandomInt(int limitUpper, int limitLower) {
+        double random = Math.random();
+        int diff = limitUpper - limitLower;
+        return (int) (random * diff + limitLower);
+    }
 
+    public static int[] generateArrayOfRandomInts(int size) {
+        int[] output = new int[size];
+        for (int i = 0; i < size; i++) {
+            output[i] = generateRandomInt(100, 55);
+        }
+        return output;
+    }
+    public static int[] sortArray(int[] arr) {
+        Arrays.sort(arr);
+        return arr;
+    }
 
     public static void main(String[] args) {
 
@@ -90,5 +106,16 @@ public class Main {
         String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r" +
                 "s", "t","v","x","y","z"};
         shuffleThenDisplayAlphabet(alphabet);
+
+        createLineBreak();
+
+        int[] randomArray = generateArrayOfRandomInts(10);
+        System.out.println("Here is our array of random ints: \n");
+        printAllElements(randomArray);
+        sortArray(randomArray);
+        System.out.println("And here it is sorted!\n");
+        printAllElements(randomArray);
+
+        createLineBreak();
     }
 }
