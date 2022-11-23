@@ -15,19 +15,13 @@ public class Main {
         return nums;
     }
     public static void printAllElements(int[]arr) {
-        for (int val: arr) {
-            System.out.println(val);
-        }
+        System.out.println(Arrays.toString(arr));
     }
     public static void printAllElements(ArrayList<String> list) {
-        for (String val: list) {
-            System.out.println(val);
-        }
+        System.out.println(list);
     }
-    public static void printAllElements(String[] list) {
-        for (String val: list) {
-            System.out.println(val);
-        }
+    public static void printAllElements(String[] arr) {
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void shuffleList(ArrayList<String> list) {
