@@ -41,7 +41,26 @@ public class Main {
         }
     }
 
+
+    public static void shuffleThenDisplayAlphabet(String[] arr) {
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(arr));
+        Collections.shuffle(list);
+
+        String firstLetter = list.get(0);
+        System.out.println("Our lucky winner tonight is: " + firstLetter);
+        String[] vowels = {"a", "e", "i", "o", "u"};
+        for (String s : vowels) {
+            if (firstLetter.equals(s)) {
+                System.out.println("Found a vowel!");
+            }
+        }
+        System.out.println("No vowels tonight folks!");
+    }
+
+
+
     public static void main(String[] args) {
+
         System.out.println("Hello world!");
         int[] testCaseOne = {3,5,1,2,7,9,8,13,25,32};
         printAllElements(filterIntsGreaterThanTen(testCaseOne));
@@ -68,6 +87,8 @@ public class Main {
         printAllElements(namesList);
         createLineBreak();
 
-
+        String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r" +
+                "s", "t","v","x","y","z"};
+        shuffleThenDisplayAlphabet(alphabet);
     }
 }
