@@ -6,13 +6,28 @@ import java.util.Collections;
 
 public class Main {
     public static int[] filterIntsGreaterThanTen (int[] nums) {
-        int k = 0;
-        for (int i = 0 ; i < nums.length; i++) {
-            k++;
+        int[] output;
+        int lengthOfFilteredArray = 0;
+        for (int number: nums) {
+            if (number > 10) {
+                lengthOfFilteredArray++;
+            }
         }
-        System.out.println("The total is: " + k);
-        nums = Arrays.stream(nums).filter(d -> d > 10).toArray();
-        return nums;
+        output = new int[lengthOfFilteredArray--];
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] > 10) {
+                output[lengthOfFilteredArray--] = nums[i];
+            }
+        }
+        return output;
+    }
+
+    public static void printSumOfAllInts(int[] arr) {
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        System.out.println("Your total is: " + sum);
     }
     public static void printAllElements(int[]arr) {
         System.out.println(Arrays.toString(arr));
@@ -104,6 +119,8 @@ public class Main {
 
         System.out.println("Hello world!");
         int[] testCaseOne = {3,5,1,2,7,9,8,13,25,32};
+
+        printSumOfAllInts(testCaseOne);
         printAllElements(filterIntsGreaterThanTen(testCaseOne));
 
 
