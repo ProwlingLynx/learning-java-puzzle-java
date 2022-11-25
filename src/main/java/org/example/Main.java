@@ -39,20 +39,28 @@ public class Main {
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void shuffleList(ArrayList<String> list) {
-        Collections.shuffle(list);
-    }
+
     public static void createLineBreak() {
         System.out.println("\n<<<<<------------------------------->>>>>\n");
     }
 
-    public static void filterLessThanFiveChars(ArrayList<String> names) {
-        for (int i = 0; i < names.size(); i++) {
-            String name = names.get(i);
-            if (name.length() < 5) {
-                names.remove(i);
-            }
+    public static String[] shuffleAndPrintFilteredStringArray (String[] names) {
+        System.out.println("Our list of names before the shuffling: ");
+        System.out.println(Arrays.toString(names));
+        ArrayList<String> listOfNames = new ArrayList<>(Arrays.asList(names));
+        Collections.shuffle(listOfNames);
+        System.out.println("Here is our list after shuffle: ");
+        String outputMessage = "[ ";
+        for (String s: listOfNames) {
+            outputMessage += s + " ,";
         }
+        System.out.println(outputMessage + " ]");
+        listOfNames.removeIf(name -> name.length() < 5);
+        String[] filteredNamesArray = new String[listOfNames.size()];
+        for (int i = 0; i < listOfNames.size(); i++) {
+            filteredNamesArray[i] = listOfNames.get(i);
+        }
+        return filteredNamesArray;
     }
 
 
@@ -134,16 +142,12 @@ public class Main {
         System.out.println("Before Shuffling the arrayList:\n");
 
         printAllElements(namesList);
-
-        shuffleList(namesList);
-        System.out.println("And now after shuffling!\n");
-        printAllElements(namesList);
+        String[] testOfNames = {"Ishikawa", "Momochi", "Fujibayashi", "Jinichi", "Nancy", "add", "fail"};
+        String[] result = shuffleAndPrintFilteredStringArray(testOfNames);
+        createLineBreak();
+        System.out.println(Arrays.toString(result));
         createLineBreak();
 
-        System.out.println("Filtering out all names less than 5 chars in length\n");
-        filterLessThanFiveChars(namesList);
-        printAllElements(namesList);
-        createLineBreak();
 
         String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "u", "r" +
                 "s", "t","v","x","y","z"};
